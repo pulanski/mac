@@ -23,20 +23,14 @@ tap "bufbuild/buf"            # Buf CLI for working with Protocol Buffers
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications"
 
-# Config
-#
-# - editorconfig
-brew "editorconfig"
-
 ##############################
 # Languages and associated   #
 # tools                      #
 ##############################
 
-# General purpose / Scripting
-
 # Python
 #
+#   - anaconda
 #   - python
 #   - pipenv
 #   - virtualenv
@@ -48,6 +42,7 @@ brew "editorconfig"
 #   - pylint
 #   - mypy
 #   - poetry
+cask "anaconda"
 brew "python@3.11"
 brew "pipenv"
 brew "virtualenv"
@@ -59,7 +54,6 @@ brew "black"
 brew "pylint"
 brew "mypy"
 brew "poetry"
-cask "anaconda"
 
 # Ruby
 #
@@ -121,15 +115,17 @@ brew "webpack"
 brew "vite"
 brew "rollup"
 
-# Static Site Generators
-#
-# - Hugo
-brew "hugo"
-
-# System / OS
+# Systems
 
 # Go
 brew "go"
+
+# Rust
+# brew "rust" <-- no need for rust, instead use rustup-init for default
+#                 toolchain installer, `rustup`
+# NOTE: having both installed will allow for the ability of conflicts
+brew "rustup-init"
+
 
 # Php
 #
@@ -140,12 +136,6 @@ brew "composer"
 
 # Perl
 brew "perl"
-
-# Rust
-# brew "rust" <-- no need for rust, instead use rustup-init for default
-#                 toolchain installer, `rustup`
-# NOTE: having both installed will allow for the ability of conflicts
-brew "rustup-init"
 
 # Concurrency
 # Erlang
@@ -176,18 +166,30 @@ brew "scalastyle"
 # Mobile / Cross-platform
 
 # Kotlin
+#
+# - kotlin
+# - ktlint
 brew "kotlin"
 brew "ktlint"
 
-# Version Control Systems
+# Static Site Generators
+#
+# - Hugo
+brew "hugo"
+
+# Version Control Systems and associate tooling
 #
 #  - Git
+#  - Lazygit
+#  - GitFlow
+#  - git-extras
 #  - Mercurial
 #  - Subversion
 #  - Bazaar (DEPRECATED)
 #  - Breezy
 brew "git"
-brew "lazygit" # terminal based UI for git
+brew "lazygit"    # terminal based UI for interfacing with git
+brew "git-extras" # collection of useful git-based utilities
 brew "git-flow"
 brew "mercurial"
 brew "subversion"
@@ -204,35 +206,36 @@ brew "buildkite-agent" # Buildkite Agent
 
 # Databases
 #
-# SQL:
+# SQL
 #
-# PostgreSQL
-# MySQL
-# MariaDB
-# Vitess
-# PlanetScale
+# - PostgreSQL
+# - MySQL
+# - MariaDB
+# - Vitess
+# - PlanetScale
+#
+# NewSQL
+#
+# - SurrealDB
+#
+# Document Databases
+#
+# - MongoDB
+#
+# Wide Column store
+#
+# - Cassandra
+#
+# Key-value cache
+#
+# - Redis
+# - Memcached
 brew "postgresql@14"
 brew "mysql"
 brew "mariadb"
 brew "vitess"
 brew "planetscale/tap/pscale"
-
-# NewSQL:
-#
-# SurrealDB
 brew "surrealdb/tap/surreal"
-
-# NoSQL:
-#
-# Document Databases:
-# MongoDB
-#
-# Key-value cache:
-# Redis
-# Memcached
-#
-# Wide Column store:
-# Cassandra
 brew "mongodb-community@6.0"
 brew "redis"
 brew "memcached"
@@ -326,9 +329,11 @@ cask "android-studio"     # android-studio
 # - vim
 # - neovim
 # - helix
+# - editorconfig
 brew "vim"
 brew "nvim"
 brew "helix"
+brew "editorconfig" # editorconfig consistent editing styles across editors
 
 # Terminals
 #
@@ -433,6 +438,7 @@ brew "glances"     # system monitoring tool
 #
 # - keycastr
 cask "keycastr"
+
 
 # Infrastructure as Code (IaaC)
 #

@@ -4,12 +4,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/pulanski/.dotfiles">
-    <img src="../assets/brewfile.png" alt="Logo" width="80" height="80">
+    <img src="./assets/brewfile.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center"> Brewfile Setup</h3>
+<h3 align="center">Mac Setup Automation</h3>
 
-  <p align="center">
+<p align="center">
     A configuration for automating the setup process of macOS with preferred installations.
     <br />
     <sub>
@@ -45,6 +45,9 @@
               <a href="#lua">Lua</a>
             </li>
             <li>
+              <a href="#js">JavaScript / TypeScript</a>
+            </li>
+            <li>
               <a href="#java">Java</a>
             </li>
             <li>
@@ -69,6 +72,9 @@
         </li>
         <li>
           <a href="#vcs">Version Control Systems and Tools</a>
+        </li>
+        <li>
+          <a href="#ci">Continuous Intended based tooling</a>
         </li>
         <li>
           <a href="#shells">Shells and Utilities</a>
@@ -118,8 +124,19 @@
       <a href="#startup-script">Startup Script</a>
     </li>
 
-  </ul>
+</ul>
 </details>
+
+### General Note
+
+I try to maintain a consistent state between this README and the contents of the
+Brewfile itself, however the README may not always be up-to-date.
+
+### Roadmap
+
+In the future, I hope to migrate this automation from Homebrew to a more
+fine-grained approach with Ansible, allowing for a unified approach to
+automation for a wide-variety of different operating systems.
 
 <!-- Taps -->
 
@@ -132,9 +149,22 @@ Core repositories that are managed by the Homebrew team.
 - [homebrew/cask-versions](https://github.com/Homebrew/homebrew-cask-versions)
 - [homebrew/core](https://formulae.brew.sh/formula/)
 
-You can also include your own public Github repositories to the list of taps <a href="https://docs.brew.sh/Taps">as described here</a>.
+Third-party repositories
 
-Additionally, many popular packages are already available like <a href="https://github.com/atlassian/homebrew-tap">atlassian/tap</a> for Atlassian software or ska-sa/tap</a> for radio astronomy.
+- [bazelbuild/tap](https://github.com/bazelbuild/homebrew-tap)
+- [yoheimuta/protolint](https://github.com/yoheimuta/homebrew-protolint)
+- [buildkite/buildkite](https://github.com/buildkite/homebrew-buildkite)
+- [snyk/tap](https://github.com/snyk/homebrew-tap)
+- [mongodb/brew](https://github.com/mongodb/homebrew-brew)
+- [coursier/formulas](https://github.com/coursier/homebrew-formulas)
+- [bufbuild/buf](https://github.com/bufbuild/homebrew-buf)
+
+You can also include your own public Github repositories to the list of taps
+<a href="https://docs.brew.sh/Taps">as described here</a>.
+
+Additionally, many popular packages are already available like
+<a href="https://github.com/atlassian/homebrew-tap">atlassian/tap</a> for
+Atlassian software or ska-sa/tap</a> for radio astronomy.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -155,27 +185,93 @@ Collection of various applications, tools, and utilities available via Homebrew.
 - Python
 
   - [Anaconda](https://anaconda.org/)
-  - [Python@3.9](https://www.python.org/)
-  - [Python@3.10](https://www.python.org/)
+  - [Python@3.11](https://www.python.org/)
   - [Pipenv](https://pipenv.readthedocs.io/en/latest/)
+  - [virtualenv]()
   - [Ipython](https://ipython.org/)
   - [Jupyter](https://jupyter.org/)
+  - [flake8](https://flake8.pycqa.org/en/latest/)
+  - [autopep8](https://github.com/hhatto/autopep8)
+  - [black](https://black.readthedocs.io/en/stable/)
+  - [pylint](https://pylint.pycqa.org/en/latest/)
+  - [mypy](http://mypy-lang.org/)
 
 <div id="ruby"></div>
 
 - Ruby
 
   - [Ruby](https://www.ruby-lang.org/en/)
-  - [Rbenv](https://github.com/rbenv/rbenv)
+  - [RubyGems](https://github.com/sportngin/brew-gem)
 
 <div id="lua"></div>
 
 - Lua
 
   - [Lua](https://www.lua.org/)
-  - [LuaJIT](https://luajit.org/)
   - [LuaRocks](https://luarocks.org/)
+  - [LuaJIT](https://luajit.org/)
   - [LuaJIT-OpenResty](https://openresty.org/)
+
+<div id="js"><div>
+
+- JavaScript / TypeScript
+
+  - Server Side Runtimes
+
+    - [Node](https://nodejs.org/en/)
+    - [Deno](https://deno.land/)
+
+  - TypeScript
+
+    - [TypeScript](https://www.typescriptlang.org/)
+
+  - Package Managers and associated tooling
+
+    - [NPM](https://www.npmjs.com/)
+    - [Yarn](https://yarnpkg.com/)
+    - [Pnpm](https://pnpm.io/)
+    - [Corepack](https://nodejs.org/api/corepack.html)
+    - [Volta](https://volta.sh/)
+    - [NVM](https://github.com/nvm-sh/nvm)
+
+  - Static Analysis and Code Quality
+
+    - [ESLint](https://eslint.org/)
+    - [Prettier](https://prettier.io/)
+
+  - Build tools
+
+    - [Babel](https://babeljs.io/)
+    - [Webpack](https://webpack.js.org/)
+    - [Vite](https://vitejs.dev/)
+    - [Rollup](https://rollupjs.org/guide/en/)
+
+<div id="go"></div>
+
+- Go
+
+  - [Go](https://golang.org/doc/devel/release.html)
+
+<div id="rust"></div>
+
+- Rust
+
+  - [Rustup](https://rustup.rs/)
+
+<div id="php"></div>
+
+- Php
+
+  - [Php](https://www.php.net/)
+  - [Composer](https://getcomposer.org/)
+
+<div id="erlang"></div>
+
+- Erlang / Elixir
+
+  - [Erlang](https://www.erlang.org/)
+  - [Elixir](https://elixir-lang.org/)
+  - [Rebar](https://rebar3.org/)
 
 <div id="java"></div>
 
@@ -184,17 +280,21 @@ Collection of various applications, tools, and utilities available via Homebrew.
   - [Java](https://www.java.com/)
   - [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-<div id="go"></div>
+<div id="scala"></div>
 
-- Go
+- Scala
 
-  - [Go](https://golang.org/doc/devel/release.html)
+  - [Scala](https://www.scala-lang.org/)
+  - [sbt](https://www.scala-sbt.org/)
+  - [coursier](https://get-coursier.io/)
+  - [scalastyle](http://www.scalastyle.org/)
 
-<div id="php"></div>
+<div id="kotlin"></div>
 
-- Php
+- Kotlin
 
-  - [Php](https://www.php.net/)
+  - [Kotlin](https://kotlinlang.org/)
+  - [ktlint](https://github.com/pinterest/ktlint)
 
 <div id="perl"></div>
 
@@ -208,13 +308,6 @@ Collection of various applications, tools, and utilities available via Homebrew.
 
   - [Awk](https://github.com/onetrueawk/awk)
 
-<div id="rust"></div>
-
-- Rust
-
-  - [Rust](https://www.rust-lang.org/)
-  - [Rustup](https://rustup.rs/)
-
 <div id="julia"></div>
 
 - Julia
@@ -225,17 +318,45 @@ Collection of various applications, tools, and utilities available via Homebrew.
 
 <div id="vcs"></div>
 
-### Version Control Systems and Tools
+### Version Control Systems and tooling
 
 - [Git](https://git-scm.com/)
-- [GitHub CLI](https://cli.github.com/)
+- [LazyGit](https://github.com/jesseduffield/lazygit)
 - [Git-Flow](https://danielkummer.github.io/git-flow-cheatsheet/)
+- [Mercurial](https://www.mercurial-scm.org/)
+- [Subversion](https://subversion.apache.org/)
+- [Breezy](https://www.breezy-vcs.org/)
+- [GitHub CLI](https://cli.github.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<div id="ci"></div>
+
+### Continuous Integration based tooling
+
+- [act](https://github.com/nektos/act)
+- [CircleCI](https://circleci.com/)
+- [Buildkite](https://buildkite.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<div id="database"></div>
+
+### Databases
+
+- SQL
+
+  - [Awk]()
+
+- SQL
+
+  - [Awk]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <div id="shells"></div>
 
-### Shells and Utilities
+### Shells and associated utilities
 
 - [Bash](https://www.gnu.org/software/bash/)
 - [Zsh](https://www.zsh.org/)
@@ -346,6 +467,7 @@ Collection of various applications, tools, and utilities available via Homebrew.
 
 - [Google Cloud SDK](https://cloud.google.com/)
 - [Terraform](https://www.terraform.io/)
+
 <!-- - [Azure](https://azure.microsoft.com/) -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -380,7 +502,8 @@ Collection of various applications, tools, and utilities available via Homebrew.
 
 ## Startup Script
 
-Script to run when first starting up a new macOS machine located at `startup.sh`.
+Script to run when first starting up a new macOS machine located at
+`startup.sh`.
 
 ```bash
 #!/bin/bash
