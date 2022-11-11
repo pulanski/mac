@@ -8,10 +8,10 @@
 # update, and install packages from.                     #
 ##########################################################
 
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
+tap "homebrew/cask"           # <--\
+tap "homebrew/cask-fonts"     # <--|-- Homebrew core taps
+tap "homebrew/cask-versions"  # <--|   (maintained by Homebrew team)
+tap "homebrew/core"           # <--/
 tap "bazelbuild/tap"          # Bazel tools (ibazel, buildozer, etc.)
 tap "yoheimuta/protolint"     # Protobuf linter
 tap "buildkite/buildkite"     # Buildkite agent
@@ -126,6 +126,16 @@ brew "go"
 # NOTE: having both installed will allow for the ability of conflicts
 brew "rustup-init"
 
+# C / C++
+#
+# - make
+# - cmake
+# - clang-format
+# - gflags
+brew "make"
+brew "cmake"
+brew "clang-format"
+brew "gflags"
 
 # Php
 #
@@ -151,6 +161,11 @@ brew "elixir"
 brew "rebar3"
 
 # JVM-based languages and tooling
+
+# Java
+#
+# - temurin
+cask "temurin"
 
 # Scala
 #
@@ -211,6 +226,7 @@ brew "buildkite-agent" # Buildkite Agent
 # - PostgreSQL
 # - MySQL
 # - MariaDB
+# - Oracle (sqlcl cli)
 # - Vitess
 # - PlanetScale
 #
@@ -232,7 +248,8 @@ brew "buildkite-agent" # Buildkite Agent
 # - Memcached
 brew "postgresql@14"
 brew "mysql"
-brew "mariadb"
+# brew "mariadb"
+cask "sqlcl"
 brew "vitess"
 brew "planetscale/tap/pscale"
 brew "surrealdb/tap/surreal"
@@ -252,13 +269,14 @@ brew "angular-cli"
 
 # Bazel-based tooling
 brew "bazel"
-brew "cmake"
 brew "bazelisk"
 brew "buildifier"
 brew "bazelbuild/tap/ibazel"
 brew "buildozer"
 # graph visualization tool
 brew "graphviz" # (useful for Bazel dependency and action graph visualizations)
+
+brew "cmake"
 
 # Package / Runtime Managers
 #
@@ -319,10 +337,16 @@ brew "aescrypt"
 #
 # - VSCode
 # - Jetbrains Toolbox
+# - Intellij Idea (Java)
+# - CLion (C/C++)
 # - Android Studio
-cask "visual-studio-code" # vscode
-cask "jetbrains-toolbox"  # jetbrains toolbox (android studio, fleet, intellij, etc.)
-cask "android-studio"     # android-studio
+# - Eclipse (Java)
+cask "visual-studio-code"
+cask "jetbrains-toolbox"
+cask "intellij-idea-ce"
+cask "clion"
+cask "android-studio"
+cask "eclipse-java"
 
 # Text Editors
 #
@@ -388,12 +412,14 @@ brew "glab"
 # - swift
 # - alex (insensitive content)
 # - protobuf
+# - fmt (cpp)
 brew "actionlint"
 brew "markdownlint-cli"
 brew "ansible-lint"
 brew "swiftformat"
 brew "alexjs"
 brew "protolint"
+brew "fmt"
 
 # CLIs
 brew "bat"         # alternative to `cat`, with syntax highlighting
