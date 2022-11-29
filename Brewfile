@@ -128,14 +128,28 @@ brew "rustup-init"
 
 # C / C++
 #
+# Build tools:
 # - make
 # - cmake
+#
+# Static Analysis:
 # - clang-format
+# - clang-tidy
+#
+# Libraries:
 # - gflags
+# - fmt
+# - libomp
 brew "make"
-brew "cmake"
-brew "clang-format"
-brew "gflags"
+brew "cmake"                        # cpp build tool
+brew "clang-format"                 # formatter
+# brew "fmenezes/tap/clang-tidy"
+brew "gflags"                       # command line argument parsing library (dated)
+brew "fmt"                          # modern formatting library
+brew "libomp"                       # cpp multithreading
+
+brew "lcov"                         # graphical front-end for coverage testing
+brew "xz"                           # compression
 
 # Php
 #
@@ -319,7 +333,8 @@ brew "helm"     # kubernetes package manager
 # - Bison
 # - Lalrpop
 #
-# LLVM
+# Compiler Middle/Backend
+# - LLVM
 brew "flex"
 brew "antlr"
 brew "lemon"
@@ -327,11 +342,14 @@ brew "byacc"
 brew "bison"
 brew "llvm"
 
+
 # Cryptography
 brew "aescrypt"
 
 # Fuzzing
 # brew "afl-fuzz" # WARNING - not available for apple silicon
+brew "libunwind"
+
 
 # IDEs
 #
@@ -412,14 +430,16 @@ brew "glab"
 # - swift
 # - alex (insensitive content)
 # - protobuf
-# - fmt (cpp)
+# - pgformatter (PostgreSQL)
+# - tflint (terraform)
 brew "actionlint"
 brew "markdownlint-cli"
 brew "ansible-lint"
 brew "swiftformat"
 brew "alexjs"
 brew "protolint"
-brew "fmt"
+brew "pgformatter"
+brew "tflint"
 
 # CLIs
 brew "bat"         # alternative to `cat`, with syntax highlighting
@@ -541,7 +561,7 @@ cask "oracle-jdk"
 # 'brew install', always 'brew services restart', 'brew link', 'brew unlink mysql' (if it is installed)
 # brew "mysql@5.6", restart_service: true, link: true, conflicts_with: ["mysql"]
 
-# spotlight replacement
+# Spotlight Replacement
 cask "alfred"
 
 # Quick Look Plugins
@@ -552,12 +572,12 @@ cask "alfred"
 # - betterzip
 # - qlimagesize
 # - qlvideo
-cask "qlstephen"      # preview plain text files without or with unknown file extension (e.g. README, CHANGELOG, etc.)
-cask "qlmarkdown"     # preview markdown files
-cask "quicklook-json" # preview json files
+# cask "qlstephen"      # preview plain text files without or with unknown file extension (e.g. README, CHANGELOG, etc.)
+# cask "qlmarkdown"     # preview markdown files
+# cask "quicklook-json" # preview json files
 cask "betterzip"      # preview archives (e.g. .zip)
-cask "qlimagesize"    # preview image dimensions in preview
-cask "qlvideo"        # preview videos
+# cask "qlimagesize"    # preview image dimensions in preview
+# cask "qlvideo"        # preview videos
 
 # Chess Engine
 #
