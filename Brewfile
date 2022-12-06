@@ -147,6 +147,15 @@ brew "clang-format"                 # formatter
 brew "gflags"                       # command line argument parsing library (dated)
 brew "fmt"                          # modern formatting library
 brew "libomp"                       # cpp multithreading
+brew "glog"                         # Google's logging library
+brew "double-conversion"
+brew "boost"
+brew "folly"
+brew "edencommon"
+brew "fizz"
+brew "wangle"
+brew "fbthrift"
+brew "fb303"
 
 brew "lcov"                         # graphical front-end for coverage testing
 brew "xz"                           # compression
@@ -212,6 +221,7 @@ brew "hugo"
 #  - Lazygit
 #  - GitFlow
 #  - git-extras
+#  - precommit
 #  - Mercurial
 #  - Subversion
 #  - Bazaar (DEPRECATED)
@@ -219,6 +229,7 @@ brew "hugo"
 brew "git"
 brew "lazygit"    # terminal based UI for interfacing with git
 brew "git-extras" # collection of useful git-based utilities
+brew "pre-commit"
 brew "git-flow"
 brew "mercurial"
 brew "subversion"
@@ -308,7 +319,7 @@ brew "asdf"  # runtime manager for NodeJS, Elixir, Ruby, Erlang, and more
 brew "wasmer"
 
 # Security Analysis
-brew "snyk"
+# brew "snyk"
 
 # Kubernetes
 #
