@@ -22,7 +22,7 @@ tap "bufbuild/buf"            # Buf CLI for working with Protocol Buffers
 tap "Hyde46/hoard"            # Hoard CLI (TUI index for commond CLI commands)
 tap "denji/nginx"             # Nginx
 tap "ktr0731/evans"           # Evans CLI (grpc/proto)
-tap "minio/stable/minio"      # Minio (cloud native s3)
+# tap "minio/stable/minio"      # Minio (cloud native s3)
 
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications"
@@ -231,6 +231,7 @@ brew "hugo"
 #  - Subversion
 #  - Bazaar (DEPRECATED)
 #  - Breezy
+#  - Sapling
 brew "git"
 brew "lazygit"    # terminal based UI for interfacing with git
 brew "git-extras" # collection of useful git-based utilities
@@ -239,6 +240,7 @@ brew "git-flow"
 brew "mercurial"
 brew "subversion"
 brew "breezy"
+brew "sapling"
 
 # CI
 #
@@ -350,6 +352,10 @@ brew "wasmer"
 # Security Analysis
 # brew "snyk"
 
+#######################
+# Distributed Systems #
+#######################
+
 # Distributed Systems
 #
 # - hadoop
@@ -358,7 +364,8 @@ brew "hadoop"
 # Storage
 #
 # - minio
-brew "minio/stable/minio"
+# brew "minio/stable/minio"
+brew "minio"
 
 # Kubernetes
 #
@@ -372,6 +379,17 @@ brew "minikube"
 brew "k9s"      # kubernetes management tool
 brew "helm"     # kubernetes package manager
 brew "argocd"   # cd platform
+
+# Virtual Machines
+#
+# - Vagrant
+# - VirtualBox
+# - Parallels
+# - VMware-Fusion
+cask "vagrant"
+# cask "virtualbox" # Not available for Apple Silicon yet
+cask "parallels"
+cask "vmware-fusion"
 
 # Compiler Infrastructure
 #
@@ -428,6 +446,19 @@ brew "vim"
 brew "nvim"
 brew "helix"
 brew "editorconfig" # editorconfig consistent editing styles across editors
+
+# Binary Analysis
+#
+# - radare2
+# - ghidra
+# - binwalk
+# - binutils
+# - hexedit
+brew "radare2"
+brew "ghidra"
+brew "binwalk"
+brew "binutils"
+brew "hexedit"
 
 # Terminals
 #

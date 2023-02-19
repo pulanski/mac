@@ -16,10 +16,10 @@ cd "$(dirname "$0")/.."
 BUNDLE_SUCESS=$(brew bundle >/dev/null)
 
 if [ "${BUNDLE_SUCESS}" ]; then
-    echo "${ON_RED} ERROR ${CYAN} Failed to update Brewfile${BLACK}. ${RESET}"
-    exit 1
+	echo "${ON_RED} ERROR ${CYAN} Failed to update Brewfile${BLACK}. ${RESET}"
+	exit 1
 else
-    echo "${ON_GREEN} SUCCESS ${CYAN} Brewfile ${GREEN}successfully updated${BLACK}. ${RESET}"
+	echo "${ON_GREEN} SUCCESS ${CYAN} Brewfile ${GREEN}successfully updated${BLACK}. ${RESET}"
 fi
 
 # if "$BUNDLE_SUCESS" | grep -q "Error"; then
