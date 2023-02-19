@@ -19,6 +19,10 @@ tap "snyk/tap"                # Snyk security and static analysis
 tap "mongodb/brew"            # MongoDB
 tap "coursier/formulas"       # Coursier (Scala)
 tap "bufbuild/buf"            # Buf CLI for working with Protocol Buffers
+tap "Hyde46/hoard"            # Hoard CLI (TUI index for commond CLI commands)
+tap "denji/nginx"             # Nginx
+tap "ktr0731/evans"           # Evans CLI (grpc/proto)
+# tap "minio/stable/minio"      # Minio (cloud native s3)
 
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications"
@@ -107,7 +111,7 @@ brew "yarn"
 brew "pnpm"
 brew "corepack"
 brew "volta"
-brew "nvm"
+# brew "nvm"
 brew "eslint"
 brew "prettier"
 brew "babel"
@@ -156,6 +160,7 @@ brew "fizz"
 brew "wangle"
 brew "fbthrift"
 brew "fb303"
+brew "texinfo" # gdb transitive dependency
 
 brew "lcov"                         # graphical front-end for coverage testing
 brew "xz"                           # compression
@@ -226,6 +231,7 @@ brew "hugo"
 #  - Subversion
 #  - Bazaar (DEPRECATED)
 #  - Breezy
+#  - Sapling
 brew "git"
 brew "lazygit"    # terminal based UI for interfacing with git
 brew "git-extras" # collection of useful git-based utilities
@@ -234,6 +240,7 @@ brew "git-flow"
 brew "mercurial"
 brew "subversion"
 brew "breezy"
+brew "sapling"
 
 # CI
 #
@@ -243,6 +250,11 @@ brew "breezy"
 brew "act"      # run GitHub Actions locally
 brew "circleci" # run CircleCI jobs locally
 brew "buildkite-agent" # Buildkite Agent
+
+# Networking
+#
+# - Tailscale
+brew "tailscale"
 
 # Databases
 #
@@ -254,6 +266,7 @@ brew "buildkite-agent" # Buildkite Agent
 # - Oracle (sqlcl cli)
 # - Vitess
 # - PlanetScale
+# - Sqlite
 #
 # NewSQL
 #
@@ -276,12 +289,25 @@ brew "mysql"
 # brew "mariadb"
 cask "sqlcl"
 brew "vitess"
+brew "sqlite"
 brew "planetscale/tap/pscale"
 brew "surrealdb/tap/surreal"
 brew "mongodb-community@6.0"
 brew "redis"
 brew "memcached"
 brew "cassandra"
+
+# SQL-related UI tools
+#
+# MySQL
+# - mycli
+# - MySQL Workbench
+#
+# Database Management CLI
+# - atlas
+brew "mycli"
+cask "mysqlworkbench"
+brew "ariga/tap/atlas"
 
 # Web Servers (nginx, apache, lighttpd, etc)
 
@@ -296,12 +322,16 @@ brew "angular-cli"
 brew "bazel"
 brew "bazelisk"
 brew "buildifier"
-brew "bazelbuild/tap/ibazel"
+brew "ibazel"
 brew "buildozer"
 # graph visualization tool
 brew "graphviz" # (useful for Bazel dependency and action graph visualizations)
 
 brew "cmake"
+
+brew "liblinear"
+brew "nmap"
+brew "rustscan"
 
 # Package / Runtime Managers
 #
@@ -316,10 +346,26 @@ brew "asdf"  # runtime manager for NodeJS, Elixir, Ruby, Erlang, and more
 #
 # - wasmtime
 # - wasmer
+brew "wasmtime"
 brew "wasmer"
 
 # Security Analysis
 # brew "snyk"
+
+#######################
+# Distributed Systems #
+#######################
+
+# Distributed Systems
+#
+# - hadoop
+brew "hadoop"
+
+# Storage
+#
+# - minio
+# brew "minio/stable/minio"
+brew "minio"
 
 # Kubernetes
 #
@@ -327,10 +373,23 @@ brew "wasmer"
 # - minikube
 # - k9s
 # - helm
+# - argocd
 brew "kubectl"
 brew "minikube"
 brew "k9s"      # kubernetes management tool
 brew "helm"     # kubernetes package manager
+brew "argocd"   # cd platform
+
+# Virtual Machines
+#
+# - Vagrant
+# - VirtualBox
+# - Parallels
+# - VMware-Fusion
+cask "vagrant"
+# cask "virtualbox" # Not available for Apple Silicon yet
+cask "parallels"
+cask "vmware-fusion"
 
 # Compiler Infrastructure
 #
@@ -387,6 +446,19 @@ brew "vim"
 brew "nvim"
 brew "helix"
 brew "editorconfig" # editorconfig consistent editing styles across editors
+
+# Binary Analysis
+#
+# - radare2
+# - ghidra
+# - binwalk
+# - binutils
+# - hexedit
+brew "radare2"
+brew "ghidra"
+brew "binwalk"
+brew "binutils"
+brew "hexedit"
 
 # Terminals
 #
@@ -478,6 +550,7 @@ brew "youtube-dl"  # CLI tool for downloading videos from YouTube
 brew "rm-improved" # alternative to `rm` with a graveyard abstraction for recovering deleted files and directories
 brew "kondo"       # identify disk space savings from deleting temporary/unnecessary files from project directories (e.g. target/, or node_modules/)
 brew "broot"
+brew "hoard"
 
 # System Information / Monitoring
 #
@@ -491,13 +564,14 @@ brew "gtop"        # alternative to `top`, with a more modern UI
 brew "bpytop"      # alternative to `top`, with a more modern UI
 brew "glances"     # system monitoring tool
 
+brew "portaudio"   # audio dep for voiceovers (python)
+
 # Keycasting
 #
 # - keycastr
 cask "keycastr"
 
-
-# Infrastructure as Code (IaaC)
+# Infrastructure as Code (IaC)
 #
 # Infrastructure provisioning automation
 # - Terraform
@@ -514,7 +588,7 @@ brew "ansible"
 # - affinity-photo
 brew "ffmpeg"
 brew "imagemagick"
-cask "affinity-photo"
+# cask "affinity-photo"
 
 # Browsers
 #
@@ -537,10 +611,12 @@ cask "discord"
 # - Spotify
 cask "spotify"
 
-# Data Serialization / Deserialization
+# Protobuf / gRPC
 #
-# - protobuf
+# - buf
+# - evans
 brew "bufbuild/buf/buf"
+brew "evans"
 
 # Machine Learning / Deep Learning / AI
 #
@@ -551,8 +627,8 @@ brew "huggingface-cli"
 #
 # - sourcegraph
 # - pandoc
-brew "sourcegraph/src-cli/src-cli" # Convert documents between various formats
-brew "pandoc"
+brew "sourcegraph/src-cli/src-cli" # Code search tool
+brew "pandoc" # Convert documents between various formats
 
 brew "pngpaste" # paste pngs into files
 brew "mas" # mac app store
@@ -586,7 +662,7 @@ cask "alfred"
 # cask "qlstephen"      # preview plain text files without or with unknown file extension (e.g. README, CHANGELOG, etc.)
 # cask "qlmarkdown"     # preview markdown files
 # cask "quicklook-json" # preview json files
-cask "betterzip"      # preview archives (e.g. .zip)
+# cask "betterzip"      # preview archives (e.g. .zip)
 # cask "qlimagesize"    # preview image dimensions in preview
 # cask "qlvideo"        # preview videos
 
@@ -624,8 +700,6 @@ cask "rectangle"
 
 # User notifications w/ Swift
 cask "yo"
-
-
 
 # Containers / Orchestration
 brew "docker"
